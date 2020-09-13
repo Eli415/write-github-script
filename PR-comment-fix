@@ -1,0 +1,18 @@
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: add-pr-comment-action
+      uses: actions/add-pr-comment-action@v1
+
+        with:
+          message: |
+            **Thanks for this code contribution!! YESS** 🌏
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+          allow-repeats: false # This is the default
+    
